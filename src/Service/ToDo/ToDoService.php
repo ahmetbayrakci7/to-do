@@ -77,7 +77,7 @@ class ToDoService
                 return $todo;
             } catch (\Exception $e) {
                 $this->logger->error('HATA: '. $e->getMessage());
-                throw new \RuntimeException('HATA: '. $e->getMessage());
+                throw new \Exception('HATA: '. $e->getMessage());
             }
         } else {
             return $existToDoList;

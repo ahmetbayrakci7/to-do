@@ -64,7 +64,7 @@ class DeveloperJobService
             $this->em->persist($devJob);
             $this->em->flush();
         } catch (\Exception $e) {
-            throw new \JsonException('HATA: ' . $e->getMessage());
+            throw new \Exception('HATA: ' . $e->getMessage());
         }
     }
 }

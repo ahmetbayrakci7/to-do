@@ -3,7 +3,6 @@
 namespace App\Service\Task;
 
 use App\Entity\Developer;
-use App\Entity\DeveloperJobs;
 use App\Entity\ToDoList;
 use App\Service\Developer\DeveloperService;
 use App\Service\ToDo\DeveloperJobService;
@@ -92,7 +91,6 @@ class TaskService
                 } else {
                     continue;
                 }
-//            }
             if (empty($remainingDevCapacity)) {
                 $i++;
                 $remainingDevCapacity = $cloneDevCap;

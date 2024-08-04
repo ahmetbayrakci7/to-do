@@ -3,7 +3,6 @@
 namespace App\Service\ToDo;
 
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 
 class AllToDoApiServices
 {
@@ -13,7 +12,7 @@ class AllToDoApiServices
     private $container;
 
     public function __construct(
-        ContainerInterface $container,
+        ContainerInterface $container
     )
     {
         $this->container = $container;

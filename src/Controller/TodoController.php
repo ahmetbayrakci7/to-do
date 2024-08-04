@@ -5,12 +5,9 @@ namespace App\Controller;
 use App\Service\Developer\DeveloperService;
 use App\Service\Task\TaskService;
 use App\Service\ToDo\DeveloperJobService;
-use Doctrine\ORM\NonUniqueResultException;
-use Doctrine\ORM\NoResultException;
 use Symfony\Component\HttpFoundation\Request;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\Routing\Annotation\Route;
 
 class TodoController extends AbstractController
@@ -42,9 +39,6 @@ class TodoController extends AbstractController
     /**
      * @Route("/", name="app_todo_index", methods={"GET", "POST"})
      * @Template()
-     * //     * @return array|RedirectResponse
-     * //     * @throws NoResultException
-     * //     * @throws NonUniqueResultException
      */
     public function index(Request $request)
     {
@@ -54,7 +48,6 @@ class TodoController extends AbstractController
 
         $developers = $this->developerService->getAllActiveDeveloper();
         $devJobs = $this->developerJobService->getAllActiveDevelopersJobs();
-//        dd($devJobs);
         return [
             'developers' => $developers,
             'devJobs' => $devJobs
