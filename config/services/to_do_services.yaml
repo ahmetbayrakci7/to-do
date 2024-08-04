@@ -1,0 +1,10 @@
+services:
+  moc1:
+    class: App\Service\ToDo\ToDoApi\MockOneApiService
+    public: true
+    autowire: true
+
+  moc2:
+    class: App\Service\ToDo\ToDoApi\MockTwoApiService
+    public: true
+    autowire: true

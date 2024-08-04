@@ -1,0 +1,61 @@
+<h1 style="margin-top: 40px">{{ developer.name}} Weekly Job Distributions</h1>
+{% for jobs in devJobs %}
+    <h3 style="margin-top: 40px">{{ loop.index }}. weekly jobs</h3>
+    <table class="table" style="margin-top: 10px">
+        <thead>
+        <tr>
+            <th>Developer Name</th>
+            <th>Job Service Name</th>
+            <th>Job Difficulty</th>
+            <th>Job Durations</th>
+            <th>Job Performance</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for job in jobs %}
+            <tr>
+                <td>{{ job.developer.name }}</td>
+                <td>{{ job.job.servicePath }}</td>
+                <td>{{ job.job.difficulty }}</td>
+                <td>{{ job.job.duration }}</td>
+                <td>{{ job.performance }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endfor %}
+
+<style>
+    /* style.css */
+
+    .table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .table th, .table td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: left;
+    }
+
+    .table th {
+        background-color: #f0f0f0;
+        font-weight: bold;
+    }
+
+    .table td {
+        background-color: #fff;
+    }
+
+    .table tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    .table tr:hover {
+        background-color: #f2f2f2;
+    }
+
+
+</style>
